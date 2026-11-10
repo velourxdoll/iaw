@@ -3,199 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Evidencias | Pascual Prieto Jaqueline</title>
+    <title>Portafolio Gótico | Pascual Prieto Jaqueline - 5CPM</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0d9488;
-            --secondary-dark: #0f766e;
-            --bg-dark: #0f172a;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --transition: all 0.3s ease;
+            --bg-dark: #07070a;
+            --bg-card: #0d0c13;
+            --bg-card-hover: #14121f;
+            --accent-purple: #9d4edd;
+            --accent-purple-glow: rgba(157, 78, 221, 0.4);
+            --accent-crimson: #ff0055;
+            --accent-crimson-glow: rgba(255, 0, 85, 0.4);
+            --border-goth: #241b35;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --shadow-dark: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-dark);
             color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(157, 78, 221, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(255, 0, 85, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
-        /* Header */
+        /* Header Gótico */
         header {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
-            color: white;
-            padding: 3rem 1.5rem;
+            border-bottom: 1px solid var(--border-goth);
+            background: rgba(13, 12, 19, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 3rem 1.5rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
         }
 
-        header h1 {
-            font-size: 2.2rem;
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), var(--accent-crimson), transparent);
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-purple) 70%, var(--accent-crimson) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
+            text-transform: uppercase;
         }
 
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
+        .header-sub {
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
-        /* Main Container */
+        /* Contenedor Principal */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 2.5rem auto;
             padding: 0 1.5rem;
             flex: 1;
         }
 
-        /* Module Sections */
+        /* Secciones de Módulos */
         .module-section {
             margin-bottom: 3.5rem;
         }
 
-        .section-header {
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid var(--border);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--border-goth);
         }
 
-        .section-header.construye {
-            border-color: var(--primary);
-            color: var(--primary);
+        .section-title.construye {
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px var(--accent-purple-glow);
         }
 
-        .section-header.implementa {
-            border-color: var(--secondary);
-            color: var(--secondary);
+        .section-title.implementa {
+            color: var(--accent-crimson);
+            text-shadow: 0 0 15px var(--accent-crimson-glow);
         }
 
-        .section-header i {
-            font-size: 1.8rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        /* Grid Cards */
+        /* Grid de Tarjetas */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
         .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
+            background: var(--bg-card);
+            border: 1px solid var(--border-goth);
+            border-radius: 8px;
             padding: 1.5rem;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .card-construye:hover::before {
+            background: var(--accent-purple);
+            box-shadow: 0 0 10px var(--accent-purple);
+        }
+
+        .card-implementa:hover::before {
+            background: var(--accent-crimson);
+            box-shadow: 0 0 10px var(--accent-crimson);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            border-color: rgba(157, 78, 221, 0.3);
+            box-shadow: var(--shadow-dark);
         }
 
         .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
         }
 
         .card p {
-            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
         }
 
+        /* Botones Góticos */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
             transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
         }
 
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
+        .btn-purple {
+            background: rgba(157, 78, 221, 0.1);
+            color: var(--accent-purple);
+            border-color: rgba(157, 78, 221, 0.3);
         }
 
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
+        .btn-purple:hover {
+            background: var(--accent-purple);
+            color: #ffffff;
+            box-shadow: 0 0 15px var(--accent-purple-glow);
         }
 
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: white;
+        .btn-crimson {
+            background: rgba(255, 0, 85, 0.1);
+            color: var(--accent-crimson);
+            border-color: rgba(255, 0, 85, 0.3);
         }
 
-        .btn-secondary:hover {
-            background-color: var(--secondary-dark);
+        .btn-crimson:hover {
+            background: var(--accent-crimson);
+            color: #ffffff;
+            box-shadow: 0 0 15px var(--accent-crimson-glow);
         }
 
-        /* Footer */
+        /* Footer Gótico */
         footer {
-            background-color: var(--bg-dark);
-            color: white;
+            border-top: 1px solid var(--border-goth);
+            background: #050508;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            padding: 2rem 1.5rem;
             margin-top: auto;
         }
 
-        .footer-content p {
-            margin: 0.3rem 0;
-            font-size: 0.95rem;
-        }
-
         .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: #38bdf8;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
         }
 
         .footer-group {
-            color: #94a3b8;
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-purple);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-copy {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #475569;
         }
 
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.75rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
+            .header-title { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -203,119 +259,110 @@
 
     <!-- Header -->
     <header>
-        <h1>Portafolio de Evidencias</h1>
-        <p>Desarrollo e Implementación de Aplicaciones Web</p>
+        <h1 class="header-title">🦇 Portafolio de Evidencias</h1>
+        <p class="header-sub">&lt;Desarrollo &amp; Implementación Web /&gt;</p>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Container -->
     <main class="container">
 
         <!-- Bloque 1: Construye Aplicaciones Web -->
         <section class="module-section">
-            <div class="section-header construye">
-                <i class="fa-solid fa-code"></i>
-                <h2>Construye Aplicaciones Web</h2>
-            </div>
-            
+            <h2 class="section-title construye">
+                <i class="fa-solid fa-code"></i> Construye Aplicaciones Web
+            </h2>
             <div class="grid">
-                <!-- Práctica 1 -->
-                <article class="card">
+                
+                <article class="card card-construye">
                     <div>
                         <h3>Práctica 1: Estructura HTML5</h3>
-                        <p>Maquetación básica utilizando etiquetas semánticas de HTML5.</p>
+                        <p>Maquetación semántica avanzada utilizando etiquetas oscuras de HTML5 y accesibilidad.</p>
                     </div>
-                    <a href="practicas/construye/practica1.html" class="btn btn-primary" target="_blank">
-                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/construye/practica1.html" class="btn btn-purple" target="_blank">
+                        Explorar <i class="fa-solid fa-skull"></i>
                     </a>
                 </article>
 
-                <!-- Práctica 2 -->
-                <article class="card">
+                <article class="card card-construye">
                     <div>
-                        <h3>Práctica 2: Estilos con CSS3</h3>
-                        <p>Diseño responsivo, uso de Flexbox y Grid Layout.</p>
+                        <h3>Práctica 2: Estilos CSS3 Dark</h3>
+                        <p>Diseño adaptativo, variables personalizadas, sombras neón y Grid Layout.</p>
                     </div>
-                    <a href="practicas/construye/practica2.html" class="btn btn-primary" target="_blank">
-                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/construye/practica2.html" class="btn btn-purple" target="_blank">
+                        Explorar <i class="fa-solid fa-skull"></i>
                     </a>
                 </article>
 
-                <!-- Práctica 3 -->
-                <article class="card">
+                <article class="card card-construye">
                     <div>
-                        <h3>Práctica 3: Formularios Interactivos</h3>
-                        <p>Validación de formularios en el cliente con JavaScript.</p>
+                        <h3>Práctica 3: JavaScript &amp; DOM</h3>
+                        <p>Validación de formularios e interactividad en tiempo real manipulando el DOM.</p>
                     </div>
-                    <a href="practicas/construye/practica3.html" class="btn btn-primary" target="_blank">
-                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/construye/practica3.html" class="btn btn-purple" target="_blank">
+                        Explorar <i class="fa-solid fa-skull"></i>
                     </a>
                 </article>
 
-                <!-- Práctica 4 -->
-                <article class="card">
+                <article class="card card-construye">
                     <div>
-                        <h3>Práctica 4: Proyecto Web Dinámico</h3>
-                        <p>Integración de HTML, CSS y manipulación del DOM.</p>
+                        <h3>Práctica 4: Aplicación Fullstack</h3>
+                        <p>Integración de frontend dinámico con backend y consultas a base de datos.</p>
                     </div>
-                    <a href="practicas/construye/practica4.html" class="btn btn-primary" target="_blank">
-                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/construye/practica4.html" class="btn btn-purple" target="_blank">
+                        Explorar <i class="fa-solid fa-skull"></i>
                     </a>
                 </article>
+
             </div>
         </section>
 
         <!-- Bloque 2: Implementa Aplicaciones Web -->
         <section class="module-section">
-            <div class="section-header implementa">
-                <i class="fa-solid fa-server"></i>
-                <h2>Implementa Aplicaciones Web</h2>
-            </div>
-            
+            <h2 class="section-title implementa">
+                <i class="fa-solid fa-server"></i> Implementa Aplicaciones Web
+            </h2>
             <div class="grid">
-                <!-- Evidencia 1 -->
-                <article class="card">
+
+                <article class="card card-implementa">
                     <div>
-                        <h3>Configuración del Servidor</h3>
-                        <p>Despliegue y configuración de entorno local y servidor de hosting.</p>
+                        <h3>Despliegue &amp; Servidor Local</h3>
+                        <p>Configuración de entorno local Apache/Nginx y administración de servicios.</p>
                     </div>
-                    <a href="practicas/implementa/evidencia1.html" class="btn btn-secondary" target="_blank">
-                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/implementa/evidencia1.html" class="btn btn-crimson" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-ghost"></i>
                     </a>
                 </article>
 
-                <!-- Evidencia 2 -->
-                <article class="card">
+                <article class="card card-implementa">
                     <div>
-                        <h3>Base de Datos & Backend</h3>
-                        <p>Conexión e implementación de base de datos en la nube.</p>
+                        <h3>Gestión de Base de Datos</h3>
+                        <p>Conexión segura a MySQL en la nube y optimización de sentencias SQL.</p>
                     </div>
-                    <a href="practicas/implementa/evidencia2.html" class="btn btn-secondary" target="_blank">
-                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/implementa/evidencia2.html" class="btn btn-crimson" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-ghost"></i>
                     </a>
                 </article>
 
-                <!-- Evidencia 3 -->
-                <article class="card">
+                <article class="card card-implementa">
                     <div>
-                        <h3>Publicación & Dominio</h3>
-                        <p>Publicación final de la aplicación web y gestión de dominio.</p>
+                        <h3>Hosting &amp; Dominio SSL</h3>
+                        <p>Publicación final en hosting remoto con certificados de seguridad HTTPS.</p>
                     </div>
-                    <a href="practicas/implementa/evidencia3.html" class="btn btn-secondary" target="_blank">
-                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <a href="practicas/implementa/evidencia3.html" class="btn btn-crimson" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-ghost"></i>
                     </a>
                 </article>
+
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- Footer con tus datos -->
     <footer>
-        <div class="footer-content">
-            <p class="footer-name">Pascual Prieto Jaqueline</p>
-            <p class="footer-group">Grupo: 5CPM</p>
-            <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;">&copy; Portafolio de Evidencias</p>
-        </div>
+        <div class="footer-name">Pascual Prieto Jaqueline</div>
+        <div class="footer-group">Grupo: 5CPM</div>
+        <div class="footer-copy"> Portafolio de Evidencias</div>
     </footer>
 
 </body>
