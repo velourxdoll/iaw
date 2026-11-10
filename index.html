@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Evidencias | Pascual Prieto Jaqueline</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0d9488;
+            --secondary-dark: #0f766e;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        /* Module Sections */
+        .module-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .section-header.construye {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .section-header.implementa {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .section-header i {
+            font-size: 1.8rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content p {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #38bdf8;
+        }
+
+        .footer-group {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Portafolio de Evidencias</h1>
+        <p>Desarrollo e Implementación de Aplicaciones Web</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Bloque 1: Construye Aplicaciones Web -->
+        <section class="module-section">
+            <div class="section-header construye">
+                <i class="fa-solid fa-code"></i>
+                <h2>Construye Aplicaciones Web</h2>
+            </div>
+            
+            <div class="grid">
+                <!-- Práctica 1 -->
+                <article class="card">
+                    <div>
+                        <h3>Práctica 1: Estructura HTML5</h3>
+                        <p>Maquetación básica utilizando etiquetas semánticas de HTML5.</p>
+                    </div>
+                    <a href="practicas/construye/practica1.html" class="btn btn-primary" target="_blank">
+                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Práctica 2 -->
+                <article class="card">
+                    <div>
+                        <h3>Práctica 2: Estilos con CSS3</h3>
+                        <p>Diseño responsivo, uso de Flexbox y Grid Layout.</p>
+                    </div>
+                    <a href="practicas/construye/practica2.html" class="btn btn-primary" target="_blank">
+                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Práctica 3 -->
+                <article class="card">
+                    <div>
+                        <h3>Práctica 3: Formularios Interactivos</h3>
+                        <p>Validación de formularios en el cliente con JavaScript.</p>
+                    </div>
+                    <a href="practicas/construye/practica3.html" class="btn btn-primary" target="_blank">
+                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Práctica 4 -->
+                <article class="card">
+                    <div>
+                        <h3>Práctica 4: Proyecto Web Dinámico</h3>
+                        <p>Integración de HTML, CSS y manipulación del DOM.</p>
+                    </div>
+                    <a href="practicas/construye/practica4.html" class="btn btn-primary" target="_blank">
+                        Ver Práctica <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Bloque 2: Implementa Aplicaciones Web -->
+        <section class="module-section">
+            <div class="section-header implementa">
+                <i class="fa-solid fa-server"></i>
+                <h2>Implementa Aplicaciones Web</h2>
+            </div>
+            
+            <div class="grid">
+                <!-- Evidencia 1 -->
+                <article class="card">
+                    <div>
+                        <h3>Configuración del Servidor</h3>
+                        <p>Despliegue y configuración de entorno local y servidor de hosting.</p>
+                    </div>
+                    <a href="practicas/implementa/evidencia1.html" class="btn btn-secondary" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Evidencia 2 -->
+                <article class="card">
+                    <div>
+                        <h3>Base de Datos & Backend</h3>
+                        <p>Conexión e implementación de base de datos en la nube.</p>
+                    </div>
+                    <a href="practicas/implementa/evidencia2.html" class="btn btn-secondary" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <!-- Evidencia 3 -->
+                <article class="card">
+                    <div>
+                        <h3>Publicación & Dominio</h3>
+                        <p>Publicación final de la aplicación web y gestión de dominio.</p>
+                    </div>
+                    <a href="practicas/implementa/evidencia3.html" class="btn btn-secondary" target="_blank">
+                        Ver Evidencia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-name">Pascual Prieto Jaqueline</p>
+            <p class="footer-group">Grupo: 5CPM</p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;">&copy; Portafolio de Evidencias</p>
+        </div>
+    </footer>
+
+</body>
+</html>
